@@ -1,5 +1,5 @@
-import { UserLogin } from '@app/modules/auth/login/domain/user-login';
+import { UserLoginModel } from '@app/modules/auth/login/domain/user-login.model';
 
 export abstract class UserLoginRepository {
-  abstract login(user: UserLogin): Promise<boolean>;
+  abstract login(user: UserLoginModel): Promise<boolean>;
 }

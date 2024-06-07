@@ -19,9 +19,23 @@
     "target": "es2022",
     "module": "es2020",
     "lib": [
-      "es2018", 
+      "es2018",
       "dom"
     ],
+    "paths": {
+      "@app/*": [
+        "src/app/*"
+      ],
+      "@env/*": [
+        "src/environments/*"
+      ],
+      "@e2e/*": [
+        "e2e/src/*"
+      ],
+      "@tests/*": [
+        "src/tests/*"
+      ]
+    },
     "useDefineForClassFields": false
   },
   "angularCompilerOptions": {

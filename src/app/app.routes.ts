@@ -8,6 +8,10 @@ export const routes: Routes = [
   },
   {
     path: 'auth',
-    loadChildren: () => import('@app/modules/auth/auth.routes').then((m) => m.routes)
+    loadChildren: () => import('@app/presentation/auth/auth.routes').then((m) => m.routes)
+  },
+  {
+    path: 'register',
+    loadComponent: () => import('./presentation/auth/register/register.page').then((m) => m.RegisterPage)
   }
 ];

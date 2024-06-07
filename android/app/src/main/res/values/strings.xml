@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">App Task Manager</string>
+    <string name="title_activity_main">App Task Manager</string>
+    <string name="package_name">com.app.task.manager.cgcg</string>
+    <string name="custom_url_scheme">com.app.task.manager.cgcg</string>
+</resources>

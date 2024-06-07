@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "142084087797",
+    "firebase_url": "https://apuestas-284d7.firebaseio.com",
+    "project_id": "apuestas-284d7",
+    "storage_bucket": "apuestas-284d7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:142084087797:android:ac4ed3d56b465139908abc",
+        "android_client_info": {
+          "package_name": "com.app.task.manager.cgcg"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "142084087797-a0aijp7i7rl5687bd6mi977o3seurbcs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCk0Gum7htp304P-diwTWUDWAT8tE9HC2Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "142084087797-a0aijp7i7rl5687bd6mi977o3seurbcs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

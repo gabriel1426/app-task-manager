@@ -1,0 +1,20 @@
+i {
+  &[class*='template-icons'] {
+    mask-size: contain;
+    mask-position: 50% 50%;
+    mask-repeat: no-repeat;
+    background: currentColor;
+  }
+}
+
+@mixin icon-common-size {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.icon {
+  &__user {
+    @include icon-common-size;
+    mask-image: url("../assets/icon/user.svg");
+  }
+}

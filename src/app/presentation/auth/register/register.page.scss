@@ -29,6 +29,16 @@
   }
 }
 
+.input-error {
+  border: 2px solid red;
+}
+
+.error-msj {
+  color: red;
+  margin-top: -10px;
+  margin-left: 1rem;
+}
+
 .sign-socials {
   display: flex;
   gap: 1.5rem;

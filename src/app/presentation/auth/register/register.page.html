@@ -3,19 +3,34 @@
     <h1 class="title">Create Account</h1>
     <p class="callout">Create an account so you can manage all your tasks</p>
   </div>
-  <form>
-    <ion-input class="custom register-inputs" type="text" placeholder="Email"></ion-input>
+  <form [formGroup]="registerForm">
+    <ion-input 
+      formControlName="email" 
+      class="custom register-inputs" 
+      type="text" placeholder="Email" 
+      [ngClass]="{ 'input-error': isInvalidField(registerForm.controls['email']) }"></ion-input>
     <div class="input-container">
-      <ion-input class="custom register-inputs" type="text" placeholder="Password"></ion-input>
-      <ion-icon size="large" color="secondary" slot="start" name="eye-outline"></ion-icon>
+      <ion-input 
+        formControlName="password" 
+        class="custom register-inputs" 
+        type="password" 
+        placeholder="Password"
+        [ngClass]="{ 'input-error': isInvalidField(registerForm.controls['password']) }"
+        ></ion-input>
     </div>
-
-    <div class="input-container">
-      <ion-input class="custom register-inputs" type="text" placeholder="Confirm Password"></ion-input>
-      <ion-icon size="large" color="secondary" slot="start" name="eye-outline"></ion-icon>
+    <div>
+      <div class="input-container">
+        <ion-input 
+          formControlName="confirmPassword" 
+          class="custom register-inputs" 
+          type="password" 
+          placeholder="Confirm Password"
+          [ngClass]="{ 'input-error': isInvalidField(registerForm.controls['confirmPassword']) }"
+          ></ion-input>
+      </div>
+      <p *ngIf="registerForm.controls['confirmPassword'].touched && registerForm.errors?.['PasswordNoMatch']" class="error-msj">Passwords do not match</p>
     </div>
-
-    <ion-button (click)='register()' expand='full'>
+    <ion-button (click)='registerUser()' expand='full'>
       Sign up
     </ion-button>
   </form>

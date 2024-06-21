@@ -5,7 +5,7 @@ import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/stan
 import { TranslateModule } from '@ngx-translate/core';
 import { UserLoginRepository } from '@app/modules/auth/login/domain/user-login.repository';
 import { UserLoginModel } from '@app/modules/auth/login/domain/user-login.model';
-import { CaseLoginService } from '@app/modules/auth/login/application/use-cases/case-login/case-login.service';
+import { LoginUseCaseService } from '@app/modules/auth/login/application/use-cases/case-login/login-use-case.service';
 import { UserLoginImplService } from '@app/modules/auth/login/insfrastructure/driven-adapter/user-login-impl.service';
 
 @Component({
@@ -18,12 +18,12 @@ import { UserLoginImplService } from '@app/modules/auth/login/insfrastructure/dr
       provide: UserLoginRepository,
       useClass: UserLoginImplService
     },
-    CaseLoginService
+    LoginUseCaseService
   ],
   imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, TranslateModule]
 })
 export class LoginPage {
-  private userLoginService = inject(CaseLoginService);
+  private loginUseCase = inject(LoginUseCaseService);
 
   constructor() {
     this.login();
@@ -34,6 +34,6 @@ export class LoginPage {
       email: 'mail@exmaple.com',
       password: '123456'
     };
-    await this.userLoginService.execute(params);
+    await this.loginUseCase.execute(params);
   }
 }

@@ -6,6 +6,7 @@ import { UserRegisterModel } from '@app/modules/auth/register/domain/user-regist
 import { CaseRegisterService } from '@app/modules/auth/register/application/user-cases/case-register/case-register.service';
 import { UserRegisterRepository } from '@app/modules/auth/register/domain/user-register.repository';
 import { UserRegisterImplService } from '@app/modules/auth/register/insfraestructure/driven-adapter/user-register-impl.service';
+import { CaseSaveUserService } from '@app/modules/auth/register/application/user-cases/case-save-user/case-save-user.service';
 
 @Component({
   selector: 'app-register',
@@ -14,6 +15,7 @@ import { UserRegisterImplService } from '@app/modules/auth/register/insfraestruc
   standalone: true,
   providers: [
     CaseRegisterService,
+    CaseSaveUserService,
     {
       provide: UserRegisterRepository,
       useClass: UserRegisterImplService
@@ -23,6 +25,7 @@ import { UserRegisterImplService } from '@app/modules/auth/register/insfraestruc
 })
 export class RegisterPage {
   private caseRegisterService = inject(CaseRegisterService);
+  private caseSaveUserService = inject(CaseSaveUserService);
 
   constructor() {
     this.register();
@@ -36,5 +39,6 @@ export class RegisterPage {
       lastName: 'Contreras'
     };
     await this.caseRegisterService.execute(params);
+    await this.caseSaveUserService.execute(params);
   }
 }

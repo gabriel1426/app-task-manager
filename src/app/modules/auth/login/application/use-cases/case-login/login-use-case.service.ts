@@ -6,7 +6,7 @@ import { UserLoginRepository } from '@app/modules/auth/login/domain/user-login.r
 @Injectable({
   providedIn: 'any'
 })
-export class CaseLoginService implements UseCase<UserLoginModel, boolean> {
+export class LoginUseCaseService implements UseCase<UserLoginModel, boolean> {
   private userLoginService = inject(UserLoginRepository);
 
   constructor() {}

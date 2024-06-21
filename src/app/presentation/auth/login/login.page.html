@@ -1,18 +1,48 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">login</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-    <div class="container">
-      <p> {{ 'title' | translate }}</p>
-      <i class="template-icons icon__user"></i>
+<ion-content class="register-container">
+  <div class="register-header">
+    <h1 class="title">Login</h1>
+  </div>
+  <form [formGroup]="loginForm">
+    <ion-input
+      formControlName="email"
+      class="custom register-inputs"
+      type="text" placeholder="Email"
+      ></ion-input>
+    <div class="input-container">
+      <ion-input
+        formControlName="password"
+        class="custom register-inputs"
+        type="password"
+        placeholder="Password"
+        ></ion-input>
     </div>
+    <ion-button  expand='full'>
+      Sign in
+    </ion-button>
+  </form>
+
+  <div class="sociales">
+    <div class="other">
+      <div class="line line-left"></div>
+      OR
+      <div class="line line-right"></div>
+    </div>
+
+    <div class="sign-socials">
+      <div class="social">
+        <img src="./assets/icon/google.svg" alt="google login" />
+      </div>
+      <div class="social">
+        <img src="./assets/icon/facebook.svg" alt="google login" />
+      </div>
+      <div class="social">
+        <img src="./assets/icon/apple.svg" alt="apple login" />
+      </div>
+    </div>
+
+    <p class="footnote center">
+      <ion-text> Do you have an account? </ion-text>
+      <ion-text class="signin-link" color="primary"> Sign up </ion-text>
+    </p>
+  </div>
 </ion-content>

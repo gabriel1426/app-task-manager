@@ -1,13 +1,62 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>register</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="register-container">
+  <div class="register-header">
+    <h1 class="title">Create Account</h1>
+    <p class="callout">Create an account so you can manage all your tasks</p>
+  </div>
+  <form [formGroup]="registerForm">
+    <ion-input 
+      formControlName="email" 
+      class="custom register-inputs" 
+      type="text" placeholder="Email" 
+      [ngClass]="{ 'input-error': isInvalidField(registerForm.controls['email']) }"></ion-input>
+    <div class="input-container">
+      <ion-input 
+        formControlName="password" 
+        class="custom register-inputs" 
+        type="password" 
+        placeholder="Password"
+        [ngClass]="{ 'input-error': isInvalidField(registerForm.controls['password']) }"
+        ></ion-input>
+    </div>
+    <div>
+      <div class="input-container">
+        <ion-input 
+          formControlName="confirmPassword" 
+          class="custom register-inputs" 
+          type="password" 
+          placeholder="Confirm Password"
+          [ngClass]="{ 'input-error': isInvalidField(registerForm.controls['confirmPassword']) }"
+          ></ion-input>
+      </div>
+      <p *ngIf="registerForm.controls['confirmPassword'].touched && registerForm.errors?.['PasswordNoMatch']" class="error-msj">Passwords do not match</p>
+    </div>
+    <ion-button (click)='registerUser()' expand='full'>
+      Sign up
+    </ion-button>
+  </form>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">register</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="sociales">
+    <div class="other">
+      <div class="line line-left"></div>
+      OR
+      <div class="line line-right"></div>
+    </div>
+
+    <div class="sign-socials">
+      <div class="social">
+        <img src="./assets/icon/google.svg" alt="google login" />
+      </div>
+      <div class="social">
+        <img src="./assets/icon/facebook.svg" alt="google login" />
+      </div>
+      <div class="social">
+        <img src="./assets/icon/apple.svg" alt="apple login" />
+      </div>
+    </div>
+
+    <p class="footnote center">
+      <ion-text> Don't have an account? </ion-text>
+      <ion-text class="signin-link" color="primary"> Sign In </ion-text>
+    </p>
+  </div>
 </ion-content>

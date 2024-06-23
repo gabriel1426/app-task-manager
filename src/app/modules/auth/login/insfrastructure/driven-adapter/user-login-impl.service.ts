@@ -6,7 +6,7 @@ import { FirebaseAuthentication } from '@capacitor-firebase/authentication';
 @Injectable({
   providedIn: 'any'
 })
-export class UserLoginImplService implements UserLoginRepository {
+export class  UserLoginImplService implements UserLoginRepository {
   constructor() {}
 
   async login(params: UserLoginModel): Promise<boolean> {

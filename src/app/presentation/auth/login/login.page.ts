@@ -1,12 +1,13 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AbstractControl, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonText, IonButton } from '@ionic/angular/standalone';
+import { IonHeader, IonTitle, IonToolbar, IonText, IonButton } from '@ionic/angular/standalone';
 import { TranslateModule } from '@ngx-translate/core';
 import { UserLoginRepository } from '@app/modules/auth/login/domain/user-login.repository';
 import { UserLoginModel } from '@app/modules/auth/login/domain/user-login.model';
 import { CaseLoginService } from '@app/modules/auth/login/application/use-cases/case-login/case-login.service';
 import { UserLoginImplService } from '@app/modules/auth/login/insfrastructure/driven-adapter/user-login-impl.service';
+import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +21,7 @@ import { UserLoginImplService } from '@app/modules/auth/login/insfrastructure/dr
     },
     CaseLoginService
   ],
-  imports: [IonButton, IonText, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, TranslateModule, ReactiveFormsModule]
+  imports: [IonicModule, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, TranslateModule, ReactiveFormsModule]
 })
 export class LoginPage {
   private userLoginService = inject(CaseLoginService);

@@ -7,6 +7,8 @@ import { UserRegisterRepository } from '@app/modules/auth/register/domain/user-r
 import { UserRegisterImplService } from '@app/modules/auth/register/insfraestructure/driven-adapter/user-register-impl.service';
 import { IonicModule } from '@ionic/angular';
 import { confirmPasswordValidator } from '@app/presentation/utils/confirm-password.validator';
+import { PASSWORD_MIN_LEN } from '@app/modules/auth/register/domain/user-valitions';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-register',
@@ -20,14 +22,14 @@ import { confirmPasswordValidator } from '@app/presentation/utils/confirm-passwo
       useClass: UserRegisterImplService
     }
   ],
-  imports: [CommonModule, IonicModule, FormsModule, ReactiveFormsModule]
+  imports: [CommonModule, IonicModule, FormsModule, ReactiveFormsModule, TranslateModule]
 })
 export class RegisterPage {
   private caseRegisterService = inject(CaseRegisterService);
 
   registerForm: FormGroup = new FormGroup({
     email: new FormControl<string>('', [Validators.required, Validators.email]),
-    password: new FormControl<string>('', [Validators.required, Validators.minLength(8)]),
+    password: new FormControl<string>('', [Validators.required, Validators.minLength(PASSWORD_MIN_LEN)]),
     confirmPassword: new FormControl<string>('', [Validators.required]),
   },
   { validators: confirmPasswordValidator }

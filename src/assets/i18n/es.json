@@ -1,3 +1,10 @@
 {
-  "title": "App template"
+  "title": "App template",
+  "createAccount": "Create Account",
+  "createAccountDet": "Create an account so you can manage all your tasks",
+  "alreadyHaveAccount": "Already have an account?",
+  "passwordNotMatch": "Passwords do not match",
+  "signIn": "Sign In",
+  "signUp": "Sign Up",
+  "or": "OR"
 }

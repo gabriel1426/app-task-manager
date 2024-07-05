@@ -1,0 +1,26 @@
+.user-info-card {
+  margin: 1rem 0;
+  display: grid;
+  grid-template-columns: 20% auto;
+  padding: 1rem;
+
+  &__icon-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+
+    .icon {
+      --icon-size: 2.3em;
+      width: var(--icon-size);
+      height: var(--icon-size);
+    }
+  }
+}
+
+.primary-label {
+  display: block;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: .5rem;
+}

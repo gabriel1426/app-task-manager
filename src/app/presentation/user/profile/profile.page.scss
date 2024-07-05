@@ -1,0 +1,53 @@
+.profile-header {
+  margin-top: 3rem;
+  
+  .profile-title {
+    font-size: 1.3rem;
+  }
+}
+
+.profile-label {
+  display: block;
+  text-align: center;
+  font-size: .8rem;
+}
+
+.primary-label {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: .3rem;
+}
+
+.user-summary {
+  display: grid;
+  grid-template-columns: 25% auto 25%;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+
+  &__picture {
+    --user-img-size: 7rem;
+    border-radius: 10px;
+    width: var(--user-img-size);
+    height: var(--user-img-size);
+  }
+}
+
+.user-primaries {
+  margin-top: 2rem;
+  text-align: center;
+
+  .name {
+    font-size: 1.4rem;
+  }
+
+  .action-button {
+    margin-top: 1rem;
+    --padding-start: 2rem;
+    --padding-end: 2rem;
+  }
+}
+
+.user-cards {
+  margin-top: 3rem;
+}

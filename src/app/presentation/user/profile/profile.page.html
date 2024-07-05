@@ -1,0 +1,37 @@
+<ion-content [fullscreen]="true">
+  <ion-header class="profile-header" collapse="condense">
+    <ion-toolbar>
+      <ion-title class="profile-title" size="medium" color="primary">Profile</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <section class="user-summary">
+    <section>
+      <ion-label class="profile-label primary-label">2209</ion-label>
+      <ion-label class="profile-label">Project Done</ion-label>
+    </section>
+    <img class="user-summary__picture" src="./assets/img/sample-profile.png" alt="User" />
+    <section>
+      <ion-label class="profile-label primary-label">80</ion-label>
+      <ion-label class="profile-label">Project Pending</ion-label>
+    </section>
+  </section>
+  <section class="user-primaries">
+    <ion-label class="profile-label primary-label name">Marie Andrew</ion-label>
+    <ion-label class="profile-label">UI/UX Designer</ion-label>
+
+    <ion-button class="action-button">Edit profile</ion-button>
+  </section>
+  <section class="user-cards">
+    <app-user-detail-card [iconList]="iconList" title="Location" subtitle="Street 34, Seokama hatta" icon="location-outline"></app-user-detail-card>
+    <app-user-detail-card [iconList]="iconList" title="Local Time" subtitle="Jul 05 2024, 12:46 PM" icon="time-outline"></app-user-detail-card>
+    <app-user-detail-card [iconList]="iconList" title="Email" subtitle="marieandrew@test.com" icon="mail-outline"></app-user-detail-card>
+    <app-user-detail-card [iconList]="iconList" title="Phone" subtitle="+01 123456789" icon="call-outline"></app-user-detail-card>
+  </section>
+</ion-content>
+
+
+<!-- @Input() title: string = '';
+@Input() subtitle: string = '';
+@Input() icon: string = '';
+@Input() iconList = { locationOutline, heartCircle }; -->

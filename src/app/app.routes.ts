@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'auth',
+    redirectTo: 'user', // TODO: colocar nuevamente el path 'auth'
     pathMatch: 'full'
   },
   {
@@ -13,5 +13,9 @@ export const routes: Routes = [
   {
     path: 'register',
     loadComponent: () => import('./presentation/auth/register/register.page').then((m) => m.RegisterPage)
+  },
+  {
+    path: 'user',
+    loadChildren: () => import('@app/presentation/user/user.routes').then((m) => m.routes)
   }
 ];
